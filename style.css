@@ -7,6 +7,9 @@
 }
 
 :root {
+    --mobil-size: 375px;
+    --desktop-size: 1440px;
+    --cly-primary-cyan-light: #2fcac8;
     --macondoText: 'Macondo', cursive;
     --primaryColor: #698f3f;
     --robotoText:'Roboto' sans-seriflo;
@@ -66,6 +69,74 @@ a{
     text-transform: uppercase;
 }
 /* end of golobs */
+/* nav-btn */
+.nav-btn {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: var(--secondaryColor);
+    margin: 1rem 1.3rem;
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* end of nav-btn */
+/* navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: var(--mainGrey);
+    transition: var(--mainTransition);
+    padding-top: 1rem;
+    padding-left: 2rem;
+    transition: var(--mainTransition);
+    /* transform */
+    transform: translateX(-100%);
+}
+.showNav {
+    transform: translateX(0);
+}
+.nav-close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+.nav-items {
+    list-style-type: none;
+}
+.nav-link {
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color:var(--secondaryColor);
+    transition: var(--mainTransition);
+}
+.nav-link:hover {
+    color: var(--mainDark);
+    padding-left: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+    .navbar {
+        width: 35vh;
+        max-width: 20rem;
+    }
+}
+/* end of navbar */
 .header{
     
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/main-bcg.jpg) center/cover no-repeat fixed;
@@ -117,7 +188,6 @@ a{
 .banner-btn:hover{
     opacity: 0.7;
     color: var(--mainWhite);
-
 }
 .banner-btn{
     padding: 1.3rem 1.5rem;
